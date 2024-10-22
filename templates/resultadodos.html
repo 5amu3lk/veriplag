@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de Similitud</title>
+    <link rel="icon" href="static/OIP.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='resultados.css') }}">
+</head>
+<body>
+
+    <!-- Barra de menú con imágenes dentro -->
+    <header class="header">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='VP.png') }}" alt="Logo" class="logo-img">
+        </div>
+        <nav>
+            <ul class="nav-links ">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/correcion">Corrección Ortográfica</a></li>
+                <li><a href="#">Ayuda</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Resultados de Similitud</h1>
+
+        <!-- Resultados de las páginas web -->
+        <div class="resultado">
+            <h2>Resultados de la búsqueda</h2>
+            <ul id="lista-resultados">
+                {% for resultado in resultados %}
+                    <li>
+                        <a href="{{ resultado.url }}" target="_blank">{{ resultado.url }}</a> - porcentaje de similitud: {{ resultado.similitud }}%
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="button-container2">
+        <a href="/">Volver a buscar</a>
+    </div>
+
+    <!-- Pie de página -->
+<footer class="footer-custom">
+    <div class="footer-group-1">
+        <div class="footer-box">
+            <figure>
+                <img src="{{ url_for('static', filename='VP.png') }}" alt="Logo Pie de Página" class="footer-logo">
+            </figure>
+        </div>
+        <div class="footer-box">
+            <h2>Sobre Nosotros</h2>
+            <p>Somos una plataforma dedicada a ayudar a los usuarios a detectar plagio de manera eficiente y precisa.</p>
+        </div>
+        <div class="footer-box">
+            <h2>Redes Sociales</h2>
+            <div class="footer-social">
+                <a href="#"><img src="{{ url_for('static', filename='facebook.png') }}" alt="Facebook" class="social-icon"></a>
+                <a href="#"><img src="{{ url_for('static', filename='twt.png') }}" alt="Twitter" class="social-icon"></a>
+                <a href="#"><img src="{{ url_for('static', filename='inst.png') }}" alt="Instagram" class="social-icon"></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-group-2">
+        <small>&copy; 2024 - VeriPlag | Todos los derechos reservados.</small>
+    </div>
+</footer>
+
+
+</body>
+</html>

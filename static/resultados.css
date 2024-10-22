@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Kanit", sans-serif;
+    font-size: 20px; /* Tamaño de fuente */
+}
+
+@keyframes rellenar {
+    to {
+        stroke-dasharray: var(--porcentaje) 100;
+    }
+}
+
+/* Estilo general para la página de resultados */
+body {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.header {
+    background-color: #4A90E2;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 110px;
+    padding: 10px 20px;
+}
+
+.header .logo {
+    cursor: pointer;
+}
+
+.header .logo img {
+    display: flex;
+    height: 60px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+.header .logo img:hover {
+    transform: scale(1.2);
+}
+
+.header .nav-links {
+    list-style: none;
+}
+
+.header .nav-links li {
+    display: inline-block;
+    padding: 0 7px;
+}
+
+.header .nav-links li:hover {
+    transform: scale(1.1);
+}
+
+.header .nav-links a {
+    font-size: 700;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.header .nav-links li a:hover {
+    color: rgb(197, 196, 195);
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    color: #4A90E2;
+    margin-top: 80px;
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Estilo para la gráfica y resultados */
+.form-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 50px;
+    flex-wrap: wrap; /* Para hacer que se ajusten en dispositivos más pequeños */
+}
+
+/* Estilo para la gráfica circular */
+.box {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    height: 290px;
+    text-align: center;
+    align-items: center;
+    box-shadow: 5px 5px 15px gray;
+}
+
+/* Estilo para pantallas pequeñas */
+.porcentaje {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+circle {
+    fill: none;
+    stroke-width: 25px;
+    transform: rotate(-90deg);
+    stroke-dasharray: 100 100;
+    transform-origin: 50%;
+}
+
+circle:nth-child(1) {
+    stroke: #ccc;
+}
+
+circle:nth-child(2) {
+    stroke: #4A90E2;
+    stroke-dasharray: calc(var(--porcentaje) * 100 / 100) 100;
+}
+
+.porcentaje span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #4A90E2;
+}
+
+/* Estilo para los resultados de las páginas */
+.box2 {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    height: 290px;
+    text-align: center;
+    box-shadow: 5px 5px 15px black;
+    overflow-y: auto;
+}
+
+#lista-resultados {
+    padding: 0;
+    font-size: 10px;
+    text-align: center;
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+#lista-resultados li {
+    background: #f9f9f9;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#lista-resultados a {
+    color: #4A90E2;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+#lista-resultados a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo del botón */
+.button-container2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button-container2 a {
+    text-decoration: none;
+    color: white;
+    background-color: #4A90E2;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-container2 a:hover {
+    background-color: #357ABD;
+}
+
+/*::::: Pie de Página :::::*/
+.footer-custom {
+    width: 100%;
+    background-color: #4A90E2;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 90px;
+}
+
+.footer-group-1 {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+.footer-box {
+    margin: 10px;
+    flex: 1;
+}
+
+.footer-box h2 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.footer-box p {
+    color: #efefef;
+    margin-bottom: 10px;
+}
+
+.footer-logo {
+    width: 190px;
+    height: auto;
+}
+
+.footer-social {
+    margin-top: 10px;
+}
+
+.footer-social a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-icon {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s;
+}
+
+.footer-social a:hover .social-icon {
+    transform: scale(1.2);
+}
+
+.footer-group-2 {
+    text-align: center;
+    background-color: #255c94;
+    padding: 10px;
+}
+
+.footer-group-2 small {
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .form-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box, .box2 {
+        width: 80%; /* Hacer que las cajas ocupen el 80% del ancho en pantallas pequeñas */
+    }
+
+    h1 {
+        font-size: 30px; /* Reducir el tamaño del título en pantallas pequeñas */
+    }
+
+    h2 {
+        font-size: 18px; /* Reducir tamaño del subtítulo */
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+    }
+
+    .header .nav-links li {
+        display: block; /* Mostrar los elementos de navegación en bloque */
+        padding: 10px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .box, .box2 {
+        width: 100%; /* Ocupa el 100% del ancho en pantallas muy pequeñas */
+        padding: 20px;
+    }
+
+    .header .nav-links a {
+        font-size: 18px; /* Reducir tamaño de las fuentes en la navegación */
+    }
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de Plagio - Ingreso de Texto</title>
+    <link rel="icon" href="{{ url_for('static', filename='OIP.ico') }}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+
+    <!-- Barra de menú con imágenes dentro -->
+    <header class="header">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='VP.png') }}" alt="Logo" class="logo-img">
+        </div>
+        <nav>
+            <ul class="nav-links ">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/correcion">Corrección Ortográfica</a></li>
+                <li><a href="#">Ayuda</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h1>Detector de Plagio</h1>
+
+    <!-- Contenedor que alinea los formularios en fila -->
+    <div class="form-container">
+        <!-- Formulario para ingresar texto -->
+        <div class="box">
+            <center>
+                <h2>
+                    Ingresa el texto para buscar similitudes
+                </h2>
+                <form action="/buscar" method="post">
+                   <textarea name="texto1" placeholder="Ingresa el texto aquí" required></textarea><br>
+                    <button type="submit">Buscar Similitudes</button>
+                </form>
+            </center>
+        </div>
+
+        <!-- Formulario para subir documentos con ícono -->
+        <div class="box2">
+            <center>
+                <h2>Subir Documento para análisis</h2>
+                <form action="/subir_archivo" method="post" enctype="multipart/form-data">
+                    <input type="file" id="fileInput" name="archivo" accept=".pdf, .docx" required style="display: none;">
+                    <img src="{{ url_for('static', filename='documento.png') }}" alt="Ícono de documento" class="icon-img" onclick="triggerFileUpload()"><br>
+                    <button type="submit">Subir y Analizar</button>
+                </form>
+                <p id="nombreArchivo" style="font-style: italic; color: green;"></p> <!-- Nombre del archivo seleccionado -->
+            </center>
+        </div>
+    </div>
+
+    <script>
+        function triggerFileUpload() {
+            document.getElementById('fileInput').click();
+        }
+
+        document.getElementById('fileInput').addEventListener('change', function() {
+            var fileName = this.files[0] ? this.files[0].name : '';
+            document.getElementById('nombreArchivo').textContent = fileName ? 'Archivo seleccionado: ' + fileName : '';
+        });
+    </script>
+
+ <!-- Pie de página -->
+<footer class="footer-custom">
+    <div class="footer-group-1">
+        <div class="footer-box">
+            <figure>
+                <img src="{{ url_for('static', filename='VP.png') }}" alt="Logo Pie de Página" class="footer-logo">
+            </figure>
+        </div>
+        <div class="footer-box">
+            <h2>Sobre Nosotros</h2>
+            <p>Somos una plataforma dedicada a ayudar a los usuarios a detectar plagio de manera eficiente y precisa.</p>
+        </div>
+        <div class="footer-box">
+            <h2>Redes Sociales</h2>
+            <div class="footer-social">
+                <a href="#"><img src="{{ url_for('static', filename='facebook.png') }}" alt="Facebook" class="social-icon"></a>
+                <a href="#"><img src="{{ url_for('static', filename='twt.png') }}" alt="Twitter" class="social-icon"></a>
+                <a href="#"><img src="{{ url_for('static', filename='inst.png') }}" alt="Instagram" class="social-icon"></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-group-2">
+        <small>&copy; 2024 - VeriPlag | Todos los derechos reservados.</small>
+    </div>
+</footer>
+
+</body>
+</html>
