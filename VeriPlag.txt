@@ -1,0 +1,10 @@
+VeriPlag
+Dirección de correo electrónico: proyecto-plagio@veriplag.iam.gserviceaccount.com
+
+---------------------------------------BUSCADOR----------------------------------------------------------------------
+<script async src="https://cse.google.com/cse.js?cx=848334ce8c0c74f06">
+</script>
+<div class="gcse-search"></div>
+
+dominio
+google-site-verification=eJmni6Ji1CTWGeICp4lGgud-b_g9xcHOq89hH91oAH0
